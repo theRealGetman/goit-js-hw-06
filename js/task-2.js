@@ -13,6 +13,10 @@ class Storage {
   }
   removeItem(itemToRemove) {
     const index = this.#items.indexOf(itemToRemove);
+    if (index < 0) {
+      console.log("There is no such item");
+      return;
+    }
     this.#items.splice(index, 1);
   }
 }
